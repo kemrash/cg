@@ -1,0 +1,33 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test:unit": "vitest",
+    "coverage": "vitest run --coverage",
+    "coverage:ui": "vitest --ui"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.4",
+    "nuxt": "^3.12.4",
+    "pinia": "^2.2.2",
+    "pinia-plugin-persistedstate": "^4.0.0",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/test-utils": "^3.14.3",
+    "@vitest/coverage-v8": "^2.1.2",
+    "@vitest/ui": "^2.1.2",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^15.7.4",
+    "sass": "^1.77.8",
+    "vite-imagetools": "^7.0.4",
+    "vite-plugin-svg-sprite": "^0.5.2",
+    "vitest": "^2.1.2"
+  }
+}
