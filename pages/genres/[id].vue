@@ -6,9 +6,14 @@ testAuthUserAndReturnUserStore()
 
 const route = useRoute()
 const moviesStore = useMoviesStore()
+
 const id = computed(() => `${route.params.id}`)
 
-await useAsyncData('genreMovies', async () => await Promise.all([moviesStore.getGenreMovies(id.value)]))
+await useAsyncData('genreMovies', async () => {
+  moviesStore.clearGenreMovies()
+
+  return await Promise.all([moviesStore.getGenreMovies(id.value)])
+})
 
 const movies = computed(() => moviesStore.genreMovies || [])
 const isMovies = computed(() => movies.value.length > 0)

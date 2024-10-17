@@ -14,9 +14,18 @@ const spinnerStore = useSpinnerStore()
 const maxScroll = ref(0)
 const countMoviesPage = ref(0)
 const isNotMaxMovies = ref(true)
-const props = defineProps<{ genre: string, movies: Movie[] }>()
 const { windowWidth, windowHeight } = getOnWindowResize()
 const { y } = getWindowScroll()
+
+let flagScroll: boolean = false
+
+onMounted(() => {
+  if (y.value !== 0) {
+    flagScroll = true
+  }
+})
+
+const props = defineProps<{ genre: string, movies: Movie[] }>()
 
 const genreTitle = computed(() => capitalizeFirstLetter(props.genre))
 
@@ -56,8 +65,12 @@ watch([windowWidth, windowHeight], () => {
 })
 
 watch(y, () => {
-  if (y.value >= maxScroll.value && isNotMaxMovies.value) {
+  if (y.value >= maxScroll.value && isNotMaxMovies.value && !flagScroll) {
     addMovies()
+  }
+
+  if (flagScroll && y.value === 0) {
+    flagScroll = false
   }
 })
 </script>

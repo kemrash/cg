@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const moviesStore = useMoviesStore()
-moviesStore.clearGenreMovies()
 
 await useAsyncData('genres', async () => await Promise.all([moviesStore.getGenres()]))
 
