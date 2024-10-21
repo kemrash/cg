@@ -1,75 +1,39 @@
-# Nuxt 3 Minimal Starter
+# CinemaGuide
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Онлайн-платформа, позволяющая пользователям искать фильмы. Проект написан на Nuxt.js и TypeScript.
 
-## Setup
+Создан по [техническому заданию](https://github.com/kemrash/cg/blob/main/tz/%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5.%20%D0%A4%D0%B8%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D0%BA%D1%83%D1%80%D1%81%D0%B0%20%C2%ABVue.js%C2%BB%20.pdf).
 
-Make sure to install the dependencies:
+## Установка
+
+Для установки зависимостей выполните команду:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Сервер разработки
 
-Start the development server on `http://localhost:3000`:
+Для запуска сервера разработки на `http://localhost:3000`, выполните:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Продакшн
 
-Build the application for production:
+Для сборки приложения в режиме production выполните:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Для локального предпросмотра production-сборки выполните:
 
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Сайт
+
+https://cg.kemnep.ru/
