@@ -8,7 +8,7 @@ aboutStore.setMovie(props.movie)
 
 <template>
   <section class="about-movie">
-    <div class="container about-movie__conteiner">
+    <div class="container about-movie__container">
       <h2 class="text-reset text text_large text_white text_bold about-movie__title">О фильме</h2>
       <UnorderedList v-if="aboutStore.items.length > 0" class="about-movie__list">
         <li v-for="item in aboutStore.items" :key="item.point" class="about-movie__item">

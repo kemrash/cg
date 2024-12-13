@@ -50,7 +50,9 @@ const onClickFavoriteBtn = async () => {
     await userStore.getUser()
   }
 
-  spinnerStore.isSpinner = false
+  if (!props.movie?.backdropUrl) {
+    spinnerStore.isSpinner = false
+  }
 }
 
 const onClickTrailerBtn = () => {
@@ -59,6 +61,10 @@ const onClickTrailerBtn = () => {
     id: props.movie?.trailerYouTubeId as string,
     title: props.movie?.title as string
   }
+}
+
+const removeSpinner = () => {
+  spinnerStore.isSpinner = false
 }
 </script>
 
@@ -107,8 +113,8 @@ const onClickTrailerBtn = () => {
         </div>
       </div>
       <div class="movie-presentation__gradient">
-        <img v-if="movie?.backdropUrl" class="movie-presentation__img" :src="movie.backdropUrl" alt=""
-          aria-hidden="true">
+        <img v-if="movie?.backdropUrl" @load="removeSpinner" @error="removeSpinner" class="movie-presentation__img"
+          :src="movie.backdropUrl" alt="" aria-hidden="true">
       </div>
     </div>
   </div>

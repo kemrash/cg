@@ -9,7 +9,10 @@ const randomMovie = computed(() => moviesStore.randomMovie)
 const getRandomMovie = async () => {
   spinnerStore.isSpinner = true
   await moviesStore.getRandomMovie()
-  spinnerStore.isSpinner = false
+
+  if (!moviesStore.randomMovie.backdropUrl) {
+    spinnerStore.isSpinner = false
+  }
 }
 </script>
 
