@@ -10,7 +10,7 @@ const getRandomMovie = async () => {
   spinnerStore.isSpinner = true
   await moviesStore.getRandomMovie()
 
-  if (!moviesStore.randomMovie.backdropUrl) {
+  if (!moviesStore.randomMovie?.backdropUrl) {
     spinnerStore.isSpinner = false
   }
 }
